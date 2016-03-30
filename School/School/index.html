@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <!--------------Libraries--------->
+    <script src="script/angular.min.js"></script>
+    <script src="script/angular-route.min.js"></script>
+
+    <!---------------Application------------>
+    <script src="app.js"></script>
+
+    <!---------Modules------->
+    <script src="app/binding/binding.js"></script>
+</head>
+<body>
+    <div ng-app="school">
+        <div ng-controller="bindingController">
+            <p>First Name: <input type="text" ng-model="firstName"></p>
+            <p>Last Name: <input type="text" ng-model="lastName"></p>
+            <p ng-bind="fullName()"></p>
+        </div>
+    </div>
+</body>
+</html>
