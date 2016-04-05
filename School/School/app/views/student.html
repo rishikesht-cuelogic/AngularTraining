@@ -1,3 +1,10 @@
-﻿<div ng-controller="studentController">
-    {{hello}}
+﻿<div ng-controller="studentController">    
+    <h1>{{title}}</h1>
+    <hr />
+    <a ui-sref="student.list">Show All Students</a>
+    Using rootScope: {{parentName}}
+    Shared Data:{{foo}}
+    <div ui-view>
+
+    </div>
 </div>

@@ -6,6 +6,7 @@
     <!--------------Libraries--------->
     <script src="script/angular.min.js"></script>
     <script src="script/angular-route.min.js"></script>
+    <script src="script/angular-ui-router.min.js"></script>
 
     <!---------------Application------------>
     <script src="app.js"></script>
@@ -13,15 +14,18 @@
     <!---------Controllers------->
     <script src="app/binding/binding.js"></script>
     <script src="app/controllers/studentController.js"></script>
+    <script src="app/controllers/studentListController.js"></script>
+    <script src="app/controllers/parentController.js"></script>
+    <script src="app/factories/services.js"></script>
+    <script src="app/data.js"></script>
 </head>
 <body>
     <div ng-app="school">
         <header>
-            <a href="#/student">Students</a>
+            <a ui-sref="student">Students</a>
+            <a ui-sref="parent">Parents</a>
         </header>
-        <div ng-view>
-        </div>        
-        <div ng-view></div>
+        <div ui-view></div>        
     </div>
 </body>
 </html>

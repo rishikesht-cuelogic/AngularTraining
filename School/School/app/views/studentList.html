@@ -1,0 +1,19 @@
+﻿<div ng-controller="studentListController">
+    {{parentTitle}}
+    <table>
+        <thead>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name </td>
+                <td>Address</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="student in list">
+                <td>{{student.firstName}}</td>
+                <td>{{student.lastName}}</td>
+                <td>{{student.address}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
