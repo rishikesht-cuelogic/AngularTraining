@@ -1,4 +1,4 @@
-﻿school.service('services', function () {
+﻿school.factory('services', function () {
     var Service = {
         foo: 'shared service'
     };
