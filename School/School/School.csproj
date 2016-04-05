@@ -43,29 +43,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.EnterpriseServices" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="app\controllers\studentController.js" />
+    <Content Include="app\views\student.html" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -75,9 +54,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\TwoWayBinding\two-way-binding.html" />
-    <Content Include="app\TwoWayBinding\two-way-binding.js" />
+    <Content Include="app.js" />
+    <Content Include="app\binding\binding.html" />
+    <Content Include="app\binding\binding.js" />
     <Content Include="index.html" />
+    <Content Include="script\angular-route.min.js" />
+    <Content Include="script\angular-ui-router.min.js" />
     <Content Include="script\angular.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>

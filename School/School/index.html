@@ -10,16 +10,18 @@
     <!---------------Application------------>
     <script src="app.js"></script>
 
-    <!---------Modules------->
+    <!---------Controllers------->
     <script src="app/binding/binding.js"></script>
+    <script src="app/controllers/studentController.js"></script>
 </head>
 <body>
     <div ng-app="school">
-        <div ng-controller="bindingController">
-            <p>First Name: <input type="text" ng-model="firstName"></p>
-            <p>Last Name: <input type="text" ng-model="lastName"></p>
-            <p ng-bind="fullName()"></p>
-        </div>
+        <header>
+            <a href="#/student">Students</a>
+        </header>
+        <div ng-view>
+        </div>        
+        <div ng-view></div>
     </div>
 </body>
 </html>

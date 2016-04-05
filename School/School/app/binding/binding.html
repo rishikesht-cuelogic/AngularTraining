@@ -1,3 +1,5 @@
-﻿<div>
-
+﻿<div ng-controller="bindingController">
+    <p>First Name: <input type="text" ng-model="firstName"></p>
+    <p>Last Name: <input type="text" ng-model="lastName"></p>
+    <p ng-bind="fullName()"></p>
 </div>
