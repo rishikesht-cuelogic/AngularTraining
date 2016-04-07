@@ -49,6 +49,10 @@
     <Content Include="app\controllers\studentController.js" />
     <Content Include="app\controllers\studentListController.js" />
     <Content Include="app\data.js" />
+    <Content Include="app\directives\html\studentAddress2.html" />
+    <Content Include="app\directives\js\studentAddress1.js" />
+    <Content Include="app\directives\js\studentAddress2.js" />
+    <Content Include="app\directives\js\studentAddress3.js" />
     <Content Include="app\factories\services.js" />
     <Content Include="app\views\home.html" />
     <Content Include="app\views\parent.html" />
@@ -76,6 +80,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\services\" />
     <Folder Include="content\" />
   </ItemGroup>
   <ItemGroup>

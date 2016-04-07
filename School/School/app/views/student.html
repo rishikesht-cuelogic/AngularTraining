@@ -1,10 +1,40 @@
 ﻿<div ng-controller="studentController">    
     <h1>{{title}}</h1>
     <hr />
+
+    <label>Address1: </label>
+    <div student-address1></div>
+
+    <label>Address2: </label>
+    <div student-address2></div>
+
+    <label>Dynamic Address: </label>
+    <div student-address3 type="2"></div>
+
     <a ui-sref="student.list">Show All Students</a>
     Using rootScope: {{parentName}}
     Shared Data:{{foo}}
-    <div ui-view>
+    <div ui-view></div>
 
+    <div>
+        <label>Number:</label>
+        <input type="number" ng-model="number" />
+        <span>Square:{{square()}}</span>
     </div>
+
+    <label>Squre Event/Odd:</label>
+    <div ng-hide="isSquareEven()">
+        <span style="font-weight:bold;">
+            Odd
+        </span>
+    </div>
+
+    <div ng-if="isSquareEven()">
+        <span style="font-weight:bold;">
+            Even
+        </span>
+    </div>
+
+    {{message}}
+    {{message2}}
 </div>

@@ -15,9 +15,19 @@
     <script src="app/binding/binding.js"></script>
     <script src="app/controllers/studentController.js"></script>
     <script src="app/controllers/studentListController.js"></script>
-    <script src="app/controllers/parentController.js"></script>
-    <script src="app/factories/services.js"></script>
+    <script src="app/controllers/parentController.js"></script>    
     <script src="app/data.js"></script>
+
+    <!-----------Services--------->
+    <script src="app/factories/services.js"></script>
+
+    <!-----------Factories----->
+    <script src="app/services/math.js"></script>
+
+    <!----------Directives--------->
+    <script src="app/directives/js/studentAddress1.js"></script><!--Using template-->
+    <script src="app/directives/js/studentAddress2.js"></script><!--Using templateUrl-->
+    <script src="app/directives/js/studentAddress3.js"></script><!--Dynamic template-->
 </head>
 <body>
     <div ng-app="school">
@@ -25,7 +35,9 @@
             <a ui-sref="student">Students</a>
             <a ui-sref="parent">Parents</a>
         </header>
-        <div ui-view></div>        
+        <div ui-view>
+            <div ng-include=""></div>
+        </div>        
     </div>
 </body>
 </html>
