@@ -2,7 +2,8 @@ angular.module('user.service', ['provider'])
        .service('userService', ['credentials', 'employees', userService]);
 
 function userService(credentials, employees) {
-
+    var users = employees.get();
+    debugger;
     var db = new Database();
     var service = {};
     service.get = get;
@@ -19,14 +20,7 @@ function userService(credentials, employees) {
     
 
     function get() {
-        var users = localStorage.getItem("Users");
-        if (!users) {
-            var json=JSON.stringify(db.users);
-            localStorage.setItem("Users",json);
-            return db.users;
-        }           
-
-        return JSON.parse(users);
+        return users;
     }
 
     function getUserById(id) {
@@ -35,11 +29,6 @@ function userService(credentials, employees) {
             if (id == users[i].id)
                 return users[i];
         }
-    }
-
-    function save(users) {
-        var json = JSON.stringify(users);
-        localStorage.setItem("Users", json);
     }
 
     function getMaxUserId() {
@@ -61,7 +50,6 @@ function userService(credentials, employees) {
     }
 
     function addUser(name, email, password, address, age, gender, education) {
-        var users = get();
         var newId = getMaxUserId();
         var newUser = {
             id: newId,
@@ -74,7 +62,6 @@ function userService(credentials, employees) {
             education: education
         };
         users.push(newUser);
-        save(users);
     }
 
     function updateUser(id, name, email, address, age, gender, education) {
@@ -90,14 +77,12 @@ function userService(credentials, employees) {
                 break;
             }
         }
-        save(users);
     }
 
     function deleteUser(id) {
         var users = get();
         var index = getIndexOfUserId(id);
         users.splice(index, 1);
-        save(users);
     }
 
     function authenticate(username, password) {
