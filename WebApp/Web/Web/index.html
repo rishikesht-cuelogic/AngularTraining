@@ -12,16 +12,32 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="app/app.css">
+    <style>
+        .error{
+            color:red;
+        }
+    </style>
 </head>
 <body>
     <!--<ul class="menu">
         <li><a ui-sref="users">Users</a></li>
     </ul>-->
-
+    <div class="container text-right" ng-controller="loginCtrl" ng-show="loggedIn">
+        Hello {{currentUser.name}} !
+        <a ng-click="logout()">Log out</a>
+    </div>
     <div ui-view></div>
+
+    <!--------Data------>
+    <script src="app/data.js"></script>
+    <script src="script/jquery-2.2.3.min.js"></script>
     
     <script src="script/angular.min.js"></script>
     <script src="script/angular-ui-router.min.js"></script>
+
+    <!-----------Bootstrap------->
+    <link href="script/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="script/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Common files to be loaded first -->
     <script src="app/common/directives/index.js"></script>
@@ -41,9 +57,10 @@
     <!-- Main module -->
     <script src="app/app.js"></script>
 
-    <!--------Data------>
-    <script src="app/data.js"></script>
-
+    <!----------Providers---------------->
+    <script src="app/common/providers/index.js"></script>
+    <script src="app/common/providers/credentialsProvider.js"></script>
+    <script src="app/common/providers/employeesProvider.js"></script>
 
 </body>
 </html>

@@ -43,8 +43,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="app\common\providers\employeesProvider.js" />
+    <Content Include="app\common\providers\credentialsProvider.js" />
+    <Content Include="app\common\providers\index.js" />
+    <Content Include="app\user\views\edit.html" />
     <Content Include="packages.config" />
     <Content Include="app\home\home.controller.js" />
+    <Content Include="script\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="script\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="script\bootstrap\css\bootstrap.css.map" />
+    <Content Include="script\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="script\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="script\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="script\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="script\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -71,6 +83,15 @@
     <Content Include="script\angular-route.min.js" />
     <Content Include="script\angular-ui-router.min.js" />
     <Content Include="script\angular.min.js" />
+    <Content Include="script\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="script\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="script\bootstrap\css\bootstrap.css" />
+    <Content Include="script\bootstrap\css\bootstrap.min.css" />
+    <Content Include="script\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="script\bootstrap\js\bootstrap.js" />
+    <Content Include="script\bootstrap\js\bootstrap.min.js" />
+    <Content Include="script\bootstrap\js\npm.js" />
+    <Content Include="script\jquery-2.2.3.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

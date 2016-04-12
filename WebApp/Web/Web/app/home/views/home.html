@@ -1,3 +1,50 @@
-﻿<div>
-    Hello {{currentUser.name}}!
-</div>
+﻿<div class="container">
+ 
+
+    <div class="row">
+        <h3>Employees</h3>
+        <div class="text-right">
+            <input type="button" class="btn btn-primary" value="New User" ng-click="create()" />
+        </div>
+    </div>
+    
+    <div class="row" style="margin:10px 0 10px 0;">
+        <select class="form-control col-lg-3" ng-options="item for item in columns track by item" ng-model="selectedSortColumn"></select>
+    </div>
+        
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                    <th>
+                        Age
+                    </th>
+                    <th>
+                        Education
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in users | orderBy:selectedSortColumn">
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.address}}</td>
+                    <td>{{user.age}}</td>
+                    <td>{{user.education}}</td>
+                    <td><a ng-click="update(user.id)">Edit</a> | <a ng-click="delete(user.id)">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

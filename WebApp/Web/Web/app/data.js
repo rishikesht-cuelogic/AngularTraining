@@ -1,35 +1,56 @@
 ﻿var Database = function () {
     this.users = [
         {
-            firstName: "Nilesh",
-            lastName: "Patil",
-            userName: "nileshpatil",
-            password:"123"
-        },
-        {
+            id:1,
             name: "Nilesh",
             email: "nilesh@gmail.com",
-            password: "123"
+            address:"cuelogic, next to ruby hall, pune",
+            age: 27,
+            gender: "Male",
+            education:"B.E."
         },
         {
+            id: 2,
             name: "Dipesh",
             email: "dipesh@gmail.com",
-            password: "123"
+            address: "cuelogic,next to ruby hall, pune",
+            age: 27,
+            gender: "Male",
+            education: "B.E."
         },
         {
-            name: "Darshan",
+            id: 3,
+            name: "Darshan1",
             email: "darshan@gmail.com",
-            password: "123"
+            address: "cuelogic,next to ruby hall, pune",
+            age: 27,
+            gender: "Male",
+            education: "B.E."
         },
         {
+            id: 4,
             name: "Gajanan",
             email: "gajanan@gmail.com",
-            password: "123"
+            address: "cuelogic,next to ruby hall, pune",
+            age: 27,
+            gender: "Male",
+            education: "B.E.",
         },
         {
+            id: 5,
             name: "Pankaj",
             email: "pankaj@gmail.com",
-            password: "123"
+            address: "cuelogic,next to ruby hall, pune",
+            age: 27,
+            gender: "Male",
+            education: "B.E."
+        }
+    ];
+
+    this.credentials = [
+        {
+            username: 'nilesh@gmail.com',
+            password:'123'
         }
     ];
 }

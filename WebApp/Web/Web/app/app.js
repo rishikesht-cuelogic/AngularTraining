@@ -8,4 +8,11 @@ angular.module('tandem', [
 ]).
 config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/login');  
-}]);
+}])
+.run(function (userService, $location, $rootScope) {
+    if (userService.getCurrentUser() && userService.getCurrentUser().email) {
+        $rootScope.loggedIn = true;
+    }
+    else
+        $location.path("/login");
+});
