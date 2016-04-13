@@ -19,13 +19,12 @@
     </style>
 </head>
 <body>
-    <!--<ul class="menu">
-        <li><a ui-sref="users">Users</a></li>
-    </ul>-->
-    <div class="container text-right" ng-controller="loginCtrl" ng-show="loggedIn">
+    
+    <header  class="container text-right" ng-controller="loginCtrl" ng-show="loggedIn">
         Hello {{currentUser.name}} !
         <a ng-click="logout()">Log out</a>
-    </div>
+    </header>
+
     <div ui-view></div>
 
     <!--------Data------>
@@ -41,6 +40,7 @@
 
     <!-- Common files to be loaded first -->
     <script src="app/common/directives/index.js"></script>
+    <script src="app/common/directives/js/customAlert.js"></script>
     <script src="app/common/services/user.js"></script>
     <script src="app/common/services/index.js"></script>
 

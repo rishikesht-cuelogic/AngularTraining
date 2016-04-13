@@ -13,9 +13,3 @@ provider.provider('credentials', function () {
         this.data = listCredentials;
     };
 });
-
-//Configure provider here          
-provider.config(function (credentialsProvider) {
-    var db = new Database();
-    credentialsProvider.set(db.credentials);
-});

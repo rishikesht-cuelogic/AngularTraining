@@ -11,8 +11,6 @@
     <div class="row" style="margin:10px 0 10px 0;">
         <select class="form-control col-lg-3" ng-options="item for item in columns track by item" ng-model="selectedSortColumn"></select>
     </div>
-        
-
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -32,18 +30,29 @@
                         Education
                     </th>
                     <th>
-                        Actions
+                        Delete
+                    </th>
+                    <th>
+                        Edit
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="user in users | orderBy:selectedSortColumn">
+                <tr ng-repeat="user in users | orderBy:selectedSortColumn" >
                     <td>{{user.name}}</td>
                     <td>{{user.email}}</td>
                     <td>{{user.address}}</td>
                     <td>{{user.age}}</td>
                     <td>{{user.education}}</td>
-                    <td><a ng-click="update(user.id)">Edit</a> | <a ng-click="delete(user.id)">Delete</a></td>
+                    <td>
+                        <button confirmed-click="delete(user.id)"
+                                ng-confirm-click="Are you sure you want to delete {{ user.name }} ?">
+                            Delete
+                        </button>
+                    </td>
+                    <td>
+                        <button ng-click="update(user.id)">Edit</button>
+                    </td>
                 </tr>
             </tbody>
         </table>

@@ -1,9 +1,9 @@
 angular.module('user.controller', ['services'])
       .controller('userCtrl', ['$scope', '$state', '$stateParams', 'userService', UserController])
-       .controller('loginCtrl', ['$scope', '$state','$rootScope', 'userService', LoginController])
+       .controller('loginCtrl', ['$scope', '$state', '$rootScope', 'userService', LoginController])
 
 function UserController($scope, $state, $stateParams, userService) {
-    
+
     $scope.user = {};
     var newUser = true;
     $scope.title = "New User";
@@ -14,28 +14,28 @@ function UserController($scope, $state, $stateParams, userService) {
     }
     $scope.update = function () {
         var u = $scope.user;
-        if(!newUser)
-            userService.updateUser(u.id, u.name, u.email, u.address, u.age, u.gender, u.education);
+        if (!newUser)
+            userService.updateUser(u);
         else
-            userService.addUser(u.name, u.email, u.password, u.address, u.age, u.gender, u.education);
+            userService.addUser(u);
 
-        $state.go('home'); 
+        $state.go('home');
     }
     $scope.cancel = function () {
         history.back();
     }
-    
+
 };
 
 function LoginController($scope, $state, $rootScope, userService) {
     $scope.currentUser = userService.getCurrentUser();
     $scope.userName = "";
     $scope.password = "";
+    $scope.loggedIn = userService.isAuthenticated();
     $scope.login = function () {
         if (userService.authenticate($scope.userName, $scope.password)) {
-            $rootScope.loggedIn = true;
-            $rootScope.email = $scope.userName;
             $state.go('home'); // go to login            
+            $scope.loggedIn = true;
         }
         else {
             alert("Failed to login");
@@ -45,8 +45,8 @@ function LoginController($scope, $state, $rootScope, userService) {
     $scope.logout = function () {
         userService.clearSession();
         $state.go('login'); // go to login
-        $rootScope.loggedIn = false;
+        $scope.loggedIn = false;
     }
 
-    
+
 }

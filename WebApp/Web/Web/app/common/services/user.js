@@ -3,7 +3,6 @@ angular.module('user.service', ['provider'])
 
 function userService(credentials, employees) {
     var users = employees.get();
-    debugger;
     var db = new Database();
     var service = {};
     service.get = get;
@@ -15,6 +14,7 @@ function userService(credentials, employees) {
     service.deleteUser = deleteUser;
     service.getUserById = getUserById;
     service.clearSession = clearSession;
+    service.isAuthenticated= isAuthenticated;
     return service;
 
     
@@ -49,31 +49,31 @@ function userService(credentials, employees) {
         }
     }
 
-    function addUser(name, email, password, address, age, gender, education) {
+    function addUser(user) {
         var newId = getMaxUserId();
         var newUser = {
             id: newId,
-            name: name,
-            email: email,
-            address: address,
-            password: password,
-            age: age,
-            gender: gender,
-            education: education
+            name: user.name,
+            email: user.email,
+            address: user.address,
+            password: user.password,
+            age: user.age,
+            gender: user.gender,
+            education: user.education
         };
         users.push(newUser);
     }
 
-    function updateUser(id, name, email, address, age, gender, education) {
+    function updateUser(user) {
         var users = get();
         for (var i = 0; i < users.length; i++) {
-            if (id == users[i].id) {
-                users[i].name = name;
-                users[i].email = email;
-                users[i].address = address;
-                users[i].age = age;
-                users[i].gender = gender;
-                users[i].education = education;
+            if (user.id == users[i].id) {
+                users[i].name = user.name;
+                users[i].email = user.email;
+                users[i].address = user.address;
+                users[i].age = user.age;
+                users[i].gender = user.gender;
+                users[i].education = user.education;
                 break;
             }
         }
@@ -102,6 +102,7 @@ function userService(credentials, employees) {
         for (var i = 0; i < listEmployees.length; i++) {
             var user = listEmployees[i];
             if (user.email == username) {
+                localStorage.authenticated = true;
                 localStorage.name = user.name;
                 localStorage.email = username;
                 return true;
@@ -120,5 +121,10 @@ function userService(credentials, employees) {
     function clearSession() {
         localStorage.name = "";
         localStorage.email = "";
+        localStorage.authenticated = false;
+    }
+
+    function isAuthenticated() {
+        return localStorage.authenticated == "true";
     }
 };

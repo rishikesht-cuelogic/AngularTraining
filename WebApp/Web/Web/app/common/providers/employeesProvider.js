@@ -13,9 +13,3 @@ provider.provider('employees', function () {
         this.data = listEmployees;
     };
 });
-
-//Configure provider here          
-provider.config(function (employeesProvider) {
-    var db = new Database();
-    employeesProvider.set(db.users);
-});
