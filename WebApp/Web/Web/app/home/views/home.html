@@ -38,7 +38,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="user in users | orderBy:selectedSortColumn" >
+                <tr ng-class="getClass(user.id)" ng-repeat="user in users | orderBy:selectedSortColumn" ng-dblclick="update(user.id)" ng-click="toggleSelectedRow(user.id)" >
                     <td>{{user.name}}</td>
                     <td>{{user.email}}</td>
                     <td>{{user.address}}</td>

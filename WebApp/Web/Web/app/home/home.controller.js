@@ -2,6 +2,31 @@
       .controller('homeCtrl', ['$scope', '$rootScope', '$state', 'userService', HomeController])
 
 function HomeController($scope, $rootScope, $state, userService) {
+    var listSelectedUsers = [];
+    function getIndexOfSelectedUser(id) {
+        for (var i = 0; i < listSelectedUsers.length; i++) {
+            if (listSelectedUsers[i] == id)
+                return i;
+        }
+        return -1;
+    }
+    function isAlreadySelected(id) {
+        return getIndexOfSelectedUser(id) != -1;
+    }
+    function removeSelectedUser(id) {
+        var index=getIndexOfSelectedUser(id);
+        if (index != -1)
+            listSelectedUsers.splice(index, 1);
+    }
+    function addSelectedUser(id) {
+        listSelectedUsers.push(id);
+    }
+    function addOrRemoveSelectedUser(id) {
+        if (isAlreadySelected(id))
+            removeSelectedUser(id);
+        else
+            addSelectedUser(id);
+    }
 
     var listUsers = userService.get();
     for (var i = 0; i < listUsers.length; i++) {
@@ -28,5 +53,13 @@ function HomeController($scope, $rootScope, $state, userService) {
 
     $scope.create = function () {
         $state.go('editUser');
+    }
+
+    $scope.toggleSelectedRow = function (id) {
+        addOrRemoveSelectedUser(id);
+    }
+
+    $scope.getClass = function (id) {
+        return (isAlreadySelected(id))
     }
 };
